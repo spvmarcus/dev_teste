@@ -612,3 +612,13 @@ edo:AxialStiffnessUnderTensionAtSeaLevel rdf:type owl:Class ;
                                          edo:hasTypedValue edo:FloatValue ;
                                          edo:hasUnit unit:N ;
                                          edo:hasValueCardinality edo:SingleValue .                                                  
+
+###  https://w3id.org/energy-domain/edo#Base64BinaryType
+edo:Base64BinaryType rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty rdf:value ;
+                                           owl:allValuesFrom xsd:base64Binary
+                                         ] ;
+                     rdfs:subClassOf edo:DataType ;
+                     rdfs:comment "Constraint for xsd:base64Binary (binary data)"@en ;
+                     rdfs:label "Base64 Binary"@en .                                         
