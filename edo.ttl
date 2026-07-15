@@ -340,4 +340,275 @@ edo:AbsoluteOutsidePressure rdf:type owl:Class ;
                             edo:hasLifecycleCreationPhase edo:DetailedDesign ;
                             edo:hasTypedValue edo:FloatValue ;
                             edo:hasUnit unit:PA ;
-                            edo:hasValueCardinality edo:SingleValue .                                      
+                            edo:hasValueCardinality edo:SingleValue .                
+
+###  https://w3id.org/energy-domain/edo#AdministrativeAttribute
+edo:AdministrativeAttribute rdf:type owl:Class ;
+                            rdfs:subClassOf edo:AttributeNature .
+
+
+###  https://w3id.org/energy-domain/edo#AnchoringCollar
+edo:AnchoringCollar rdf:type owl:Class ;
+                    rdfs:subClassOf edo:IfcInstanciableElement ,
+                                    edo:SplitCollar ;
+                    dcterms:identifier "AnchoringCollar" ;
+                    skos:altLabel "Anchor Clamp"@en ,
+                                  "Anchoring Device"@en ,
+                                  "Fixation Collar"@en ,
+                                  "Securing Collar"@en ;
+                    skos:definition "A mechanical device used to stabilize and secure flexible pipes, risers, or umbilical systems to fixed structures in subsea applications. By clamping onto the outer layers of the pipe, it prevents unwanted movement during installation and operation, helping to maintain alignment and integrity under tension or compression."@en ,
+                                    "Um dispositivo mecânico usado para estabilizar e fixar dutos flexíveis ou risers a estruturas fixas em aplicações submarinas, além de dar suporte aos sistemas umbilicais. Ao se prender às camadas externas do tubo, evita movimentos indesejados durante a instalação e operação, ajudando a manter o alinhamento e a integridade sob tensão ou compressão."@pt-br ;
+                    skos:prefLabel "Anchoring Collar"@en ,
+                                   "Colar de Ancoragem"@pt-br ;
+                    edo:hasAttribute edo:SafeWorkingLoad ;
+                    edo:hasDiscipline edo:SubseaFlexiblePipesEngineering ,
+                                      edo:SubseaUmbilicalsEngineering ;
+                    edo:ifc_equivalentClass "IfcPipeFitting" ;
+                    edo:ifc_objectType "AnchoringCollar" ;
+                    edo:ifc_predefinedType "USERDEFINED" .
+
+
+###  https://w3id.org/energy-domain/edo#AnodeCollarSet
+edo:AnodeCollarSet rdf:type owl:Class ;
+                   rdfs:subClassOf edo:IfcInstanciableElement ,
+                                   edo:SplitCollar ;
+                   dcterms:identifier "AnodeCollarSet" ;
+                   skos:altLabel "Anode Bracket"@en ,
+                                 "Anode Clamp"@en ,
+                                 "CP Collar"@en ,
+                                 "Cathodic Protection Collar"@en ;
+                   skos:definition "Colar de anodo sacrifical usado para proteção contra corrosão em ambientes submarinos. É projetado para ser acoplado ao redor de tubos ou risers e sofrer corrosão controlada, protegendo assim as estruturas metálicas contra ferrugem e degradação. Geralmente fabricado de zinco ou alumínio, garante a longevidade dos equipamentos submarinos ao se sacrificar para evitar a corrosão em infraestruturas críticas."@pt-br ,
+                                   "Sacrificial anode collar set used for corrosion protection in subsea environments. It is designed to attach around pipes or risers and undergo controlled corrosion, thus protecting the metallic structures from rust and degradation. Typically made from zinc or aluminum, it ensures the longevity of subsea equipment by sacrificing itself to prevent corrosion on critical infrastructure."@en ;
+                   skos:prefLabel "Anode Collar Set"@en ,
+                                  "Conjunto de Colares de Anodo"@pt-br ;
+                   edo:hasAttribute edo:AnodeCollarsAxialSpacing ,
+                                    edo:AnodeCollarsQuantity ,
+                                    edo:ClampInternalDiameter ,
+                                    edo:ExternalDiameter ,
+                                    edo:GalvanicMaterial ,
+                                    edo:IndividualAnodeMass ,
+                                    edo:MetallicStrandLength ,
+                                    edo:MetallicStrandSpareQuantity ;
+                   edo:hasDiscipline edo:SubseaFlexiblePipesEngineering ,
+                                     edo:SubseaUmbilicalsEngineering ;
+                   edo:ifc_equivalentClass "IfcPipeFitting" ;
+                   edo:ifc_objectType "AnodeCollarSet" ;
+                   edo:ifc_predefinedType "USERDEFINED" .
+
+
+###  https://w3id.org/energy-domain/edo#AnodeCollarsAxialSpacing
+edo:AnodeCollarsAxialSpacing rdf:type owl:Class ;
+                             rdfs:subClassOf edo:DomainAttribute ;
+                             dcterms:accessRights "PUBLIC" ;
+                             dcterms:identifier "AnodeCollarsAxialSpacing" ;
+                             skos:definition "Axial distance between each individual collar."@en ;
+                             skos:prefLabel "Anode Collars Axial Spacing"@en ,
+                                            "Espaçamento Axial entre os Colares de Anodo"@pt-br ;
+                             edo:hasAttributeScope edo:TypeLevelAttribute ;
+                             edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                             edo:hasTypedValue edo:FloatValue ;
+                             edo:hasUnit unit:MilliM ;
+                             edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#AnodeCollarsQuantity
+edo:AnodeCollarsQuantity rdf:type owl:Class ;
+                         rdfs:subClassOf edo:DomainAttribute ;
+                         dcterms:accessRights "PUBLIC" ;
+                         dcterms:identifier "AnodeCollarsQuantity" ;
+                         skos:definition "The total number of anode collars to provide cathodic protection against corrosion."@en ;
+                         skos:prefLabel "Anode Collars Quantity"@en ,
+                                        "Quantidade de Colares de Anodo"@pt-br ;
+                         edo:hasAttributeScope edo:TypeLevelAttribute ;
+                         edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                         edo:hasTypedValue edo:IntValue ;
+                         edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#AntiCollapseSheath
+edo:AntiCollapseSheath rdf:type owl:Class ;
+                       rdfs:subClassOf edo:IfcInstanciableElement ,
+                                       edo:SolidLayer ;
+                       dcterms:identifier "AntiCollapseSheath" ;
+                       skos:definition "Camada de reforço em dutos flexíveis submarinos usados na exploração de petróleo e gás, projetada para evitar o colapso do duto sob altas pressões externas, como as encontradas em ambientes de águas profundas. Sua função principal é fornecer suporte estrutural contra forças externas que poderiam comprimir ou deformar o duto, especialmente durante situações em que a pressão interna é reduzida ou ausente, como quando o duto está vazio. Normalmente feita de materiais metálicos ou poliméricos de alta resistência, a Capa Anti-Colapso garante a integridade do duto flexível em condições extremas."@pt-br ,
+                                       "Reinforcement layer in subsea flexible pipes used in oil and gas exploration, designed to prevent the collapse of the pipe under high external pressure conditions, such as those encountered in deepwater environments. Its primary role is to provide structural support against external forces that could compress or deform the pipe, particularly during situations where the internal pressure is reduced or absent, like when the pipe is emptied. Typically made from high-strength metallic or polymeric materials, the Anti Collapse Sheath ensures the integrity of the flexible pipe under extreme conditions."@en ;
+                       skos:prefLabel "Anti Collapse Sheath"@en ,
+                                      "Capa Anti-Colapso"@pt-br ;
+                       edo:hasDiscipline edo:SubseaFlexiblePipesEngineering ;
+                       edo:ifc_equivalentClass "IfcPipeSegment" ;
+                       edo:ifc_objectType "AntiCollapseSheath" ;
+                       edo:ifc_predefinedType "USERDEFINED" .
+
+
+###  https://w3id.org/energy-domain/edo#AntiWearSheath
+edo:AntiWearSheath rdf:type owl:Class ;
+                   rdfs:subClassOf edo:IfcInstanciableElement ,
+                                   edo:SolidLayer ;
+                   dcterms:identifier "AntiWearSheath" ;
+                   skos:definition "Camada de reforço em dutos flexíveis usados na exploração de petróleo e gás, projetada para proteger o duto do desgaste externo e da abrasão causados pelo contato com o fundo marinho, equipamentos ou outros elementos submarinos. Seu papel principal é fornecer uma barreira protetora durável que protege as camadas subjacentes contra danos mecânicos, aumentando a vida útil do tubo flexível. Geralmente feita de materiais poliméricos resistentes ao desgaste, a Capa Anti-Atrito garante a integridade do duto ao reduzir o risco de danos na superfície em condições operacionais adversas."@pt-br ,
+                                   "Reinforcement layer in subsea flexible pipes used in oil and gas exploration, designed to protect the pipe from external wear and abrasion caused by contact with the seabed, equipment, or other subsea elements. Its primary role is to provide a durable protective barrier that shields the underlying layers from mechanical damage, extending the lifespan of the flexible pipe. Typically made from wear-resistant polymeric materials, the Anti Wear Sheath ensures the pipe's integrity by reducing the risk of surface damage under harsh operating conditions."@en ;
+                   skos:prefLabel "Anti Wear Sheath"@en ,
+                                  "Capa Anti-Atrito"@pt-br ;
+                   edo:hasAttribute edo:TapesQuantity ;
+                   edo:hasDiscipline edo:SubseaFlexiblePipesEngineering ;
+                   edo:ifc_equivalentClass "IfcPipeSegment" ;
+                   edo:ifc_objectType "AntiWearSheath" ;
+                   edo:ifc_predefinedType "USERDEFINED" .
+
+
+###  https://w3id.org/energy-domain/edo#AnyURIType
+edo:AnyURIType rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty rdf:value ;
+                                     owl:allValuesFrom xsd:anyURI
+                                   ] ;
+               rdfs:subClassOf edo:DataType ;
+               rdfs:comment "Constraint for xsd:anyURI (URIs/IRIs)"@en ;
+               rdfs:label "URI Value"@en .
+
+
+###  https://w3id.org/energy-domain/edo#ArchitecturalEngineering
+edo:ArchitecturalEngineering rdf:type owl:Class ;
+                             rdfs:subClassOf edo:TechnicalDiscipline ;
+                             rdfs:label "Architectural Engineering"@en ,
+                                        "Engenharia Arquitetônica"@pt-br ;
+                             skos:definition "Disciplina de engenharia focada no projeto de edifícios, construção e integração de sistemas."@pt-br ,
+                                             "Engineering discipline focused on building design, construction and systems integration."@en .
+
+
+###  https://w3id.org/energy-domain/edo#ArmourLayer
+edo:ArmourLayer rdf:type owl:Class ;
+                rdfs:subClassOf edo:WoundLayer ;
+                dcterms:identifier "ArmourLayer" ;
+                skos:definition "A reinforcement layer in subsea flexible pipes used in oil and gas exploration, designed to provide mechanical strength and protection against external forces, such as pressure and movement. It ensures structural integrity by preventing deformation and failure during operation. Typically made from high-strength metal wires, like carbon steel or stainless steel, the Armor Layer enhances the pipe's durability in harsh underwater conditions."@en ;
+                skos:prefLabel "Armour Layer"@en ,
+                               "Camada de Armadura"@pt-br .
+
+
+###  https://w3id.org/energy-domain/edo#AssemblyShouldObeyModelPolarity
+edo:AssemblyShouldObeyModelPolarity rdf:type owl:Class ;
+                                    rdfs:subClassOf edo:DomainAttribute ;
+                                    dcterms:accessRights "PUBLIC" ;
+                                    dcterms:identifier "AssemblyShouldObeyModelPolarity" ;
+                                    skos:definition "If true, the pipe section must be assembled according to the polarity in the model. If false, it can be mounted in any polarity."@en ;
+                                    skos:prefLabel "A Montagem Deve Obedecer à Polaridade do Modelo"@pt-br ,
+                                                   "Assembly Should Obey Model Polarity"@en ;
+                                    edo:hasAttributeScope edo:InstanceLevelAttribute ;
+                                    edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                                    edo:hasTypedValue edo:BooleanValue ;
+                                    edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#AssemblyTorque
+edo:AssemblyTorque rdf:type owl:Class ;
+                   rdfs:subClassOf edo:DomainAttribute ;
+                   dcterms:accessRights "PUBLIC" ;
+                   dcterms:identifier "AssemblyTorque" ;
+                   skos:definition "Specifies the torque applied during assembly, ensuring proper tightening for secure connections. This value is critical for maintaining the structural integrity and reliability of the connection under operational loads."@en ;
+                   skos:prefLabel "Assembly Torque"@en ,
+                                  "Torque de Montagem"@pt-br ;
+                   edo:hasAttributeScope edo:InstanceLevelAttribute ;
+                   edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                   edo:hasTypedValue edo:FloatValue ;
+                   edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#Asset
+edo:Asset rdf:type owl:Class ;
+          rdfs:subClassOf edo:DomainElement ;
+          dcterms:identifier "Asset" ;
+          skos:definition "An asset refers to Physical, Traceable, and Replaceable resources such as equipment and pipelines crucial for production and transportation. These assets are managed to optimize performance, ensure safety, and maximize operational efficiency throughout their lifecycle."@en ,
+                          "Base para todos os ativos físicos tangíveis"@pt-br ;
+          skos:prefLabel "Asset"@en ,
+                         "Ativo"@pt-br .
+
+
+###  https://w3id.org/energy-domain/edo#AttributeClassification
+edo:AttributeClassification rdf:type owl:Class ;
+                            rdfs:subClassOf edo:DomainClassification ;
+                            rdfs:label "Attribute Classification"@en ,
+                                       "Classificação de Atributos"@pt-br ;
+                            skos:definition "Axis dedicated to classifying attributes, their nature, scope, value origin and datatype aspects."@en ,
+                                            "Eixo dedicado a classificar atributos, sua natureza, escopo, origem do valor e aspectos de tipo de dado."@pt-br .
+
+
+###  https://w3id.org/energy-domain/edo#AttributeDomainCategory
+edo:AttributeDomainCategory rdf:type owl:Class ;
+                            rdfs:subClassOf edo:AttributeNature ;
+                            rdfs:comment "Classifies the nature or domain of the attribute's content."@en ;
+                            rdfs:label "Attribute Domain Category"@en ,
+                                       "Categoria de Domínio do Atributo"@pt-br ;
+                            skos:definition "Classifica a natureza ou domínio do conteúdo do atributo"@pt-br ,
+                                            "Classifies the nature or domain of the attribute's content"@en .
+
+
+###  https://w3id.org/energy-domain/edo#AttributeNature
+edo:AttributeNature rdf:type owl:Class ;
+                    rdfs:subClassOf edo:AttributeClassification ;
+                    rdfs:label "Attribute Nature"@en ,
+                               "Natureza do Atributo"@pt-br ;
+                    skos:definition "High-level nature of attributes, including technical and administrative branches."@en ,
+                                    "Natureza de alto nível dos atributos, incluindo ramos técnicos e administrativos."@pt-br .
+
+
+###  https://w3id.org/energy-domain/edo#AttributeScope
+edo:AttributeScope rdf:type owl:Class ;
+                   rdfs:subClassOf edo:AttributeNature ;
+                   rdfs:comment "Defines whether the attribute applies to all instances of a type or to a specific instance."@en ;
+                   rdfs:label "Attribute Scope"@en ,
+                              "Escopo do Atributo"@pt-br ;
+                   skos:definition "Define se o atributo se aplica a todas as instâncias de um tipo ou a uma instância específica"@pt-br ,
+                                   "Defines whether the attribute applies to all instances of a type or to a specific instance"@en .
+
+
+###  https://w3id.org/energy-domain/edo#AttributeValueCardinality
+edo:AttributeValueCardinality rdf:type owl:Class ;
+                              rdfs:subClassOf edo:ValueNature ;
+                              rdfs:comment "Superclass for constraints on the cardinality of values (single or multiple)."@en ;
+                              rdfs:label "Value Cardinality"@en .
+
+
+###  https://w3id.org/energy-domain/edo#AttributesGroup
+edo:AttributesGroup rdf:type owl:Class ;
+                    rdfs:subClassOf edo:ValueNature .
+
+
+###  https://w3id.org/energy-domain/edo#AutomationControlEngineering
+edo:AutomationControlEngineering rdf:type owl:Class ;
+                                 rdfs:subClassOf edo:TechnicalDiscipline ;
+                                 rdfs:label "Automation & Control Engineering"@en ,
+                                            "Engenharia de Automação e Controle"@pt-br ;
+                                 skos:definition "Disciplina de engenharia focada em sistemas de controle automatizado e automação de processos."@pt-br ,
+                                                 "Engineering discipline focused on automated control systems and process automation."@en .
+
+
+###  https://w3id.org/energy-domain/edo#AxialStiffnessUnderCompressionAtSeaLevel
+edo:AxialStiffnessUnderCompressionAtSeaLevel rdf:type owl:Class ;
+                                             rdfs:subClassOf edo:DomainAttribute ;
+                                             dcterms:accessRights "PUBLIC" ;
+                                             dcterms:identifier "AxialStiffnessUnderCompressionAtSeaLevel" ;
+                                             skos:definition "Represents the resistance of a component or system to axial deformation under compression when measured at sea level. This property is essential for understanding how the structure behaves under compressive loads, ensuring that it can maintain stability and structural integrity."@en ,
+                                                             "Rigidez axial (EA) duto comprimido, 20°C e pressão atmosferica (dentro e fora)"@pt-br ;
+                                             skos:prefLabel "Axial Stiffness Under Compression at Sea Level"@en ,
+                                                            "Rigidez axial (EA) duto comprimido, 20°C e pressão atmosferica (dentro e fora)"@pt-br ;
+                                             edo:hasAttributeScope edo:TypeLevelAttribute ;
+                                             edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                                             edo:hasTypedValue edo:FloatValue ;
+                                             edo:hasUnit unit:N ;
+                                             edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#AxialStiffnessUnderTensionAtSeaLevel
+edo:AxialStiffnessUnderTensionAtSeaLevel rdf:type owl:Class ;
+                                         rdfs:subClassOf edo:DomainAttribute ;
+                                         dcterms:accessRights "PUBLIC" ;
+                                         dcterms:identifier "AxialStiffnessUnderTensionAtSeaLevel" ;
+                                         skos:definition "Represents the resistance of a component or system to axial deformation under tension when measured at sea level. This property is crucial for evaluating how the structure performs under tensile loads, ensuring it can withstand stretching forces while maintaining its integrity."@en ,
+                                                         "Rigidez axial (EA) duto tracionado, 20°C e pressão atmosferica (dentro e fora)."@pt-br ;
+                                         skos:prefLabel "Axial Stiffness Under Tension at Sea Level"@en ,
+                                                        "Rigidez axial (EA) duto tracionado, 20°C e pressão atmosferica (dentro e fora)"@pt-br ;
+                                         edo:hasAttributeScope edo:TypeLevelAttribute ;
+                                         edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                                         edo:hasTypedValue edo:FloatValue ;
+                                         edo:hasUnit unit:N ;
+                                         edo:hasValueCardinality edo:SingleValue .                                                  
