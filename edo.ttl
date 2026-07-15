@@ -20,3 +20,324 @@
                                       dcterms:title "EDO - Energy Domain Ontology" ;
                                       rdfs:label "Energy Domain Ontology" ;
                                       owl:versionInfo "v0.0.3" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/accessRights
+dcterms:accessRights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/conversionMultiplier
+qudt:conversionMultiplier rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/definedUnitOfSystem
+qudt:definedUnitOfSystem rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/hasQuantityKind
+qudt:hasQuantityKind rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/symbol
+qudt:symbol rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/ucumCode
+qudt:ucumCode rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#subClassOf
+rdfs:subClassOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#maxCardinality
+owl:maxCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minCardinality
+owl:minCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/energy-domain/edo#DomainAnnotation
+edo:DomainAnnotation rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/energy-domain/edo#DomainAuxiliarAnnotation
+edo:DomainAuxiliarAnnotation rdf:type owl:AnnotationProperty ;
+                             rdfs:subPropertyOf edo:DomainAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#DomainEngineeringAnnotation
+edo:DomainEngineeringAnnotation rdf:type owl:AnnotationProperty ;
+                                rdfs:subPropertyOf edo:DomainAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#DomainRelationship
+edo:DomainRelationship rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf edo:DomainAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#appliesTo
+edo:appliesTo rdf:type owl:AnnotationProperty ;
+              rdfs:label "Applies to"@en ,
+                         "Se aplica a"@pt-br ;
+              skos:definition "Indica que o sujeito se aplica ao predicado"@pt-br ,
+                              "Indicates that the subject applies to the object"@en ;
+              rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#defaultValidValues
+edo:defaultValidValues rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasAttribute
+edo:hasAttribute rdf:type owl:AnnotationProperty ;
+                 rdfs:label "Has attribute"@en ,
+                            "Possui atributo"@pt-br ;
+                 skos:definition "Indica atributo(s) que a entidade possui"@pt-br ,
+                                 "Indicates attribute(s) that the entity has"@en ;
+                 rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasAttributeCategory
+edo:hasAttributeCategory rdf:type owl:AnnotationProperty ;
+                         rdfs:label "has attribute category"@en ,
+                                    "tem categoria de atributo"@pt-br ;
+                         skos:definition "A categoria técnica do atributo (geométrica, funcional, etc.)"@pt-br ,
+                                         "The technical category of the attribute (geometric, functional, etc.)"@en ;
+                         rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasAttributeGroup
+edo:hasAttributeGroup rdf:type owl:AnnotationProperty ;
+                      rdfs:label "has attribute group"@en ,
+                                 "tem grupo de atributo"@pt-br ;
+                      skos:definition "Indica que o atributo tem um agrupamento especial para fins de organização"@pt-br ,
+                                      "Indicates that the attribute has a special grouping for organizational purposes"@en ;
+                      rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasAttributeScope
+edo:hasAttributeScope rdf:type owl:AnnotationProperty ;
+                      rdfs:label "has attribute scope"@en ,
+                                 "tem escopo de atributo"@pt-br ;
+                      skos:definition "Classifica se o atributo se aplica ao tipo de equipamento, instância ou lote"@pt-br ,
+                                      "Classifies whether the attribute applies to equipment type, instance or batch"@en ;
+                      rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasDiscipline
+edo:hasDiscipline rdf:type owl:AnnotationProperty ;
+                  rdfs:label "Has Discipline"@en ,
+                             "Pertence a uma disciplina técnica"@pt-br ;
+                  skos:definition "Associa a entidade a uma disciplina técnica"@pt-br ,
+                                  "Belongs to a technical discipline"@en ;
+                  rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasDomain
+edo:hasDomain rdf:type owl:AnnotationProperty ;
+              rdfs:label "Has Domain"@en ,
+                         "Pertence a um domínio"@pt-br ;
+              skos:definition "Associa a entidade a um ou mais domínios"@pt-br ,
+                              "Belongs to one or more domains"@en ;
+              rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasLifecycleCreationPhase
+edo:hasLifecycleCreationPhase rdf:type owl:AnnotationProperty ;
+                              rdfs:label "has lifecycle creation phase"@en ,
+                                         "tem fase de criação no ciclo de vida"@pt-br ;
+                              skos:definition "A fase do ciclo de vida quando o valor do atributo é criado"@pt-br ,
+                                              "The lifecycle phase when the attribute value is created"@en ;
+                              rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasLifecycleUsagePhase
+edo:hasLifecycleUsagePhase rdf:type owl:AnnotationProperty ;
+                           rdfs:label "has lifecycle usage phase"@en ,
+                                      "tem fase de uso no ciclo de vida"@pt-br ;
+                           skos:definition "A(s) fase(s) do ciclo de vida quando o valor do atributo é utilizado"@pt-br ,
+                                           "The lifecycle phase(s) when the attribute value is used"@en ;
+                           rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasLocationType
+edo:hasLocationType rdf:type owl:AnnotationProperty ;
+                    rdfs:label "Has Location Type"@en ,
+                               "Pertence a um tipo de locação"@pt-br ;
+                    skos:definition "Associa a entidade a um tipo de locação"@pt-br ,
+                                    "Belongs to one or more Location Types"@en ;
+                    rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasSubDomain
+edo:hasSubDomain rdf:type owl:AnnotationProperty ;
+                 rdfs:label "Has SubDomain"@en ,
+                            "Pertence a um subdomínio"@pt-br ;
+                 skos:definition "Associa a entidade a um ou mais subdomínios"@pt-br ,
+                                 "Belongs to one or more subdomains"@en ;
+                 rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasTypedValue
+edo:hasTypedValue rdf:type owl:AnnotationProperty ;
+                  rdfs:label "Has Typed Value"@en ,
+                             "Possui tipo de valor"@pt-br ;
+                  skos:definition "Indica que a entidade tem um valor como número real, inteiro, texto, booleano e etc."@pt-br ,
+                                  "Indicates that the entity has a typed value, lik float, string, boolean, integer, etc."@en ;
+                  rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#hasUnit
+edo:hasUnit rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/energy-domain/edo#hasValueCardinality
+edo:hasValueCardinality rdf:type owl:AnnotationProperty ;
+                        rdfs:label "Has Value Cardinality"@en ,
+                                   "Possui cardinalidade de valor"@pt-br ;
+                        skos:definition "Indica a quantidade de valores que a entidade possui"@pt-br ,
+                                        "Indicates the quantity of values the entity support"@en ;
+                        rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#ifc_equivalentClass
+edo:ifc_equivalentClass rdf:type owl:AnnotationProperty ;
+                        rdfs:label "Classe IFC equivalente"@pt-br ,
+                                   "IFC equivalent Class"@en ;
+                        skos:definition "Classe IFC equivalente"@pt-br ,
+                                        "IFC equivalent class"@en ;
+                        rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#ifc_objectType
+edo:ifc_objectType rdf:type owl:AnnotationProperty ;
+                   rdfs:label "IFC ObjectType"@en ,
+                              "ObjectType IFC"@pt-br ;
+                   skos:definition "Object Type for IFC class customization"@en ,
+                                   "Object Type para a customização de classes IFC"@pt-br ;
+                   rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#ifc_predefinedType
+edo:ifc_predefinedType rdf:type owl:AnnotationProperty ;
+                       rdfs:label "IFC PredefinedType"@en ,
+                                  "PredefinedType IFC"@pt-br ;
+                       skos:definition "Predefined Type for IFC class customization"@en ,
+                                       "Predefined Type para a customização de classes IFC"@pt-br ;
+                       rdfs:subPropertyOf edo:DomainEngineeringAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#specifiValidValues
+edo:specifiValidValues rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+###  https://w3id.org/energy-domain/edo#validValues
+edo:validValues rdf:type owl:AnnotationProperty ;
+                rdfs:label "Valid Values"@en ,
+                           "Valores Válidos"@pt-br ;
+                skos:definition "List of Valid Values for the Attribute"@en ,
+                                "Lista de valores válidos para o atributo"@pt-br ;
+                rdfs:subPropertyOf edo:DomainAuxiliarAnnotation .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/energy-domain/edo#DomainAuxiliarProperty
+edo:DomainAuxiliarProperty rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+rdf:value rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/schema/qudt/Unit
+qudt:Unit rdf:type owl:Class .
+
+
+###  https://w3id.org/energy-domain/edo#AbsoluteInsidePressure
+edo:AbsoluteInsidePressure rdf:type owl:Class ;
+                           rdfs:subClassOf edo:BendingStiffnessCurveAttribute ,
+                                           edo:DomainAttribute ;
+                           dcterms:accessRights "PUBLIC" ;
+                           dcterms:identifier "AbsoluteInsidePressure" ;
+                           skos:definition "Represents the absolute internal pressure exerted within a component or system. This property is crucial for evaluating the structural integrity and performance, ensuring that the system can withstand the specified pressure without failure, particularly in subsea environments where pressure management is critical."@en ;
+                           skos:prefLabel "Absolute Inside Pressure"@en ,
+                                          "Pressão Absoluta (dentro)"@pt-br ;
+                           edo:hasAttributeScope edo:TypeLevelAttribute ;
+                           edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                           edo:hasTypedValue edo:FloatValue ;
+                           edo:hasUnit unit:PA ;
+                           edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#AbsoluteOutsidePressure
+edo:AbsoluteOutsidePressure rdf:type owl:Class ;
+                            rdfs:subClassOf edo:BendingStiffnessCurveAttribute ,
+                                            edo:DomainAttribute ;
+                            dcterms:accessRights "PUBLIC" ;
+                            dcterms:identifier "AbsoluteOutsidePressure" ;
+                            skos:definition "Represents the absolute external pressure exerted on a component or system. This property is essential for evaluating how the system withstands pressure from its surrounding environment, particularly in subsea applications where external pressure can be significantly higher and impact the structural integrity of the system."@en ;
+                            skos:prefLabel "Pressão Absoluta Externa"@pt-br ,
+                                           "Pressão absoluta (fora)"@en ;
+                            edo:hasAttributeScope edo:TypeLevelAttribute ;
+                            edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                            edo:hasTypedValue edo:FloatValue ;
+                            edo:hasUnit unit:PA ;
+                            edo:hasValueCardinality edo:SingleValue .                                      
