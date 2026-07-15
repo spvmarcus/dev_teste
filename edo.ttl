@@ -622,3 +622,37 @@ edo:Base64BinaryType rdf:type owl:Class ;
                      rdfs:subClassOf edo:DataType ;
                      rdfs:comment "Constraint for xsd:base64Binary (binary data)"@en ;
                      rdfs:label "Base64 Binary"@en .                                         
+
+###  https://w3id.org/energy-domain/edo#BasicDesign
+edo:BasicDesign rdf:type owl:Class ;
+                rdfs:subClassOf edo:DesignPhase ;
+                rdfs:label "Basic Design"@en ,
+                           "Projeto Básico"@pt-br ;
+                skos:definition "Fase onde são desenvolvidas especificações gerais de engenharia, layouts e listas de equipamentos principais."@pt-br ,
+                                "Phase where general engineering specifications, layouts, and main equipment lists are developed."@en .
+
+
+###  https://w3id.org/energy-domain/edo#BasicProjectRevision
+edo:BasicProjectRevision rdf:type owl:Class ;
+                         rdfs:subClassOf edo:DomainAttribute ;
+                         dcterms:accessRights "PUBLIC" ;
+                         dcterms:identifier "BasicProjectRevision" ;
+                         skos:definition "Numeric value incremented with each new submission of the project (e.g., 0000, 0001, 0002, etc.), recorded as text. This value tracks revisions and ensures clarity in version control throughout the project lifecycle, allowing stakeholders to reference the most current or previous versions as needed."@en ,
+                                         "Valor numérico incrementado a cada novo envio (0000, 0001, 0002 e etc.) como texto."@pt-br ;
+                         skos:prefLabel "Basic Project Revision"@en ,
+                                        "Revisão do Projeto Básico"@pt-br ;
+                         edo:hasAttributeScope edo:InstanceLevelAttribute ;
+                         edo:hasLifecycleCreationPhase edo:BasicDesign ;
+                         edo:hasTypedValue edo:StringValue ;
+                         edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#BatchLevelAttribute
+edo:BatchLevelAttribute rdf:type owl:Class ;
+                        rdfs:subClassOf edo:AttributeScope ;
+                        rdfs:comment "Attribute common to a batch of equipment instances."@en ;
+                        rdfs:label "Atributo de Lote"@pt-br ,
+                                   "Batch Attribute"@en ;
+                        skos:definition "Atributo comum a um lote de instâncias de equipamento"@pt-br ,
+                                        "Attribute common to a batch of equipment instances"@en .
+
