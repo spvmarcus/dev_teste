@@ -310,6 +310,38 @@ rdf:value rdf:type owl:DatatypeProperty .
 ###  http://qudt.org/schema/qudt/Unit
 qudt:Unit rdf:type owl:Class .
 
+
+###  https://w3id.org/energy-domain/edo#AbsoluteInsidePressure
+edo:AbsoluteInsidePressure rdf:type owl:Class ;
+                           rdfs:subClassOf edo:BendingStiffnessCurveAttribute ,
+                                           edo:DomainAttribute ;
+                           dcterms:accessRights "PUBLIC" ;
+                           dcterms:identifier "AbsoluteInsidePressure" ;
+                           skos:definition "Represents the absolute internal pressure exerted within a component or system. This property is crucial for evaluating the structural integrity and performance, ensuring that the system can withstand the specified pressure without failure, particularly in subsea environments where pressure management is critical."@en ;
+                           skos:prefLabel "Absolute Inside Pressure"@en ,
+                                          "Pressão Absoluta (dentro)"@pt-br ;
+                           edo:hasAttributeScope edo:TypeLevelAttribute ;
+                           edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                           edo:hasTypedValue edo:FloatValue ;
+                           edo:hasUnit unit:PA ;
+                           edo:hasValueCardinality edo:SingleValue .
+
+
+###  https://w3id.org/energy-domain/edo#AbsoluteOutsidePressure
+edo:AbsoluteOutsidePressure rdf:type owl:Class ;
+                            rdfs:subClassOf edo:BendingStiffnessCurveAttribute ,
+                                            edo:DomainAttribute ;
+                            dcterms:accessRights "PUBLIC" ;
+                            dcterms:identifier "AbsoluteOutsidePressure" ;
+                            skos:definition "Represents the absolute external pressure exerted on a component or system. This property is essential for evaluating how the system withstands pressure from its surrounding environment, particularly in subsea applications where external pressure can be significantly higher and impact the structural integrity of the system."@en ;
+                            skos:prefLabel "Pressão Absoluta Externa"@pt-br ,
+                                           "Pressão absoluta (fora)"@en ;
+                            edo:hasAttributeScope edo:TypeLevelAttribute ;
+                            edo:hasLifecycleCreationPhase edo:DetailedDesign ;
+                            edo:hasTypedValue edo:FloatValue ;
+                            edo:hasUnit unit:PA ;
+                            edo:hasValueCardinality edo:SingleValue .                
+
 ###  https://w3id.org/energy-domain/edo#AdministrativeAttribute
 edo:AdministrativeAttribute rdf:type owl:Class ;
                             rdfs:subClassOf edo:AttributeNature .
@@ -624,11 +656,6 @@ edo:BatchLevelAttribute rdf:type owl:Class ;
                         skos:definition "Atributo comum a um lote de instâncias de equipamento"@pt-br ,
                                         "Attribute common to a batch of equipment instances"@en .
 
-
-###  https://w3id.org/energy-domain/edo#BendMomentVsShearForceCurveAttribute
-edo:BendMomentVsShearForceCurveAttribute rdf:type owl:Class ;
-                                         rdfs:subClassOf edo:DomainAttribute ;
-                                         rdfs:label "Bending Moment Versus Shear Force Attribute"@en .
 ###  https://w3id.org/energy-domain/edo#BendMomentVsShearForceTableColumn
 edo:BendMomentVsShearForceTableColumn rdf:type owl:Class ;
                                       rdfs:subClassOf edo:BendMomentVsShearForceCurveAttribute ;
